@@ -1,0 +1,165 @@
+﻿@model IEnumerable<Domain.Entityes.OrderDetails>
+
+
+@if (Model.Count().Equals(0))
+{
+    <h2 align="center">у вас немає замовлень</h2>
+}
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success" align="center" style="color: red"><h3>@TempData["message"]</h3></div>
+}
+@if (!Model.Count().Equals(0))
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>
+               Замовленні товари
+            </th>
+            <th>
+                Дані покупця
+            </th>
+            <th>
+               Статус замовлення
+            </th>
+           <th>
+                Дії над замовленням
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                   @foreach (var i in item.ProductInOrders)
+                   {
+                       if (i != null)
+                       {
+                        <h4 align="center">"@i.ProductInOrderName"</h4>
+                                <div align="center">
+                                    <img src="~/PhotoForDB/@i.ProductInOrderPhoto" height="80" width="70" />
+                                </div>
+                           <p align="center">
+                               ватість - <strong>@(i.ProductInOrderPrice) грн</strong>
+                           </p>
+                        <p align="center">
+                            обраний розмір - <strong>@i.ProductInOrderSize</strong>
+                        </p>
+                       }
+                   }
+                    </td>
+                <td>
+                    <p><strong>Дата замовлення</strong> - @Html.DisplayFor(modelItem => item.DateOrder)</p>
+                    <p><strong>Им'я </strong> - @Html.DisplayFor(modelItem => item.ClientName)</p>
+                    <p><strong>E-mail </strong> - @Html.DisplayFor(modelItem => item.Email)</p>
+                    <p><strong>Телефон </strong> - @Html.DisplayFor(modelItem => item.Phone)</p>
+                    <p><strong>Обрана доставка</strong> - @Html.DisplayFor(modelItem => item.Delivery)</p>
+                    <p><strong>Спосіб оплати</strong> - @Html.DisplayFor(modelItem => item.Payment)</p>
+                    <p><strong>Адреса</strong> - @Html.DisplayFor(modelItem => item.Address)</p>
+                    <p><strong>Коментарій клієнта</strong> -@Html.DisplayFor(modelItem => item.Сomment)</p>
+                    </td>
+                <td>
+                  @if (item.Status == "новий")
+                    {
+                    <h4 style="color: red">@item.Status</h4>
+                  }
+                @if (item.Status == "виконаний")
+                    {
+                    <h4 style="color: green">@item.Status</h4>
+                }
+                    </td>
+                <td>
+                    <input id="@(item.OrderId + "Ok")" type="button" value="Виконано" class="btn btn-default btn-xs"
+                           style="background-color:  aquamarine" />
+                    <br/>
+                    <br />
+                    <input id="@(item.OrderId + "New")" type="button" value="&nbsp;&nbsp;&nbsp;Новий&nbsp;&nbsp;&nbsp;" class="btn btn-default btn-xs"
+                           style="background-color:  aquamarine" />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  
+                    <input class="btn btn-default btn-xs" id="@(item.OrderId + "Dell")" onClick="getElementById('@(item.OrderId + "DellModal")').removeAttribute('style');" type="button" value="Видалити" style="background-color: bisque" />
+
+                    <div id="@(item.OrderId + "DellModal")" style="display:none;">
+                        <div class="overlayModal"></div>
+                        <div class="visibleModal">
+                            <h4 align="center">Заказ покупця - <strong>"@item.ClientName"</strong></h4>
+                            <br />
+                            <h4 align="center" style="color: red">Ви точно хочете видалити це замовлення?</h4>
+                            <input id="@(item.OrderId  + "DellYes")" onClick="getElementById('@(item.OrderId  + "DellModal")').style.display = 'none';" type="button" value="&nbsp;&nbsp;&nbsp; Так &nbsp;&nbsp;&nbsp;" class="btn btn-default" style="margin: 50px; float: left; background-color: aquamarine" />
+                            <input id="@(item.OrderId  + "DellNo")" onClick="getElementById('@(item.OrderId  + "DellModal")').style.display = 'none';" type="button" value="&nbsp;&nbsp;&nbsp; Ні &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" class="btn btn-default" style="margin: 50px; float: right; background-color: aquamarine" />
+                            <br />
+                        </div>
+                    </div>
+                    <script>
+                        $(document)
+                               .ready(function () {
+                                   $("#@(item.OrderId + "DellYes")")
+                                       .click(function () {
+                                           var data = {
+                                               orderId: ('@item.OrderId ')
+                                           };
+                                           $.ajax({
+                                               url: "/Admin/OrderDelite",
+                                               type: "POST",
+                                               data: data,
+                                               success: function (data) {
+                                                   $("#OrdersInAdmin").html(data);
+                                               }
+                                           });
+                                       });
+                               });
+                   
+                    $(document)
+                        .ready(function () {
+                            $("#@(item.OrderId + "Ok")")
+                                .click(function () {
+                                    var data = {
+                                        orderId: ('@item.OrderId')
+                    };
+                    $.ajax({
+                        url: "/Admin/OrderOk",
+                        type: "POST",
+                        data: data,
+                        success: function (data) {
+                            $("#OrdersInAdmin").html(data);
+                        }
+                    });
+                });
+                        });
+                     $(document)
+                        .ready(function () {
+                            $("#@(item.OrderId + "New")")
+                                .click(function () {
+                                    var data = {
+                                        orderId: ('@item.OrderId')
+                    };
+                    $.ajax({
+                        url: "/Admin/OrderNew",
+                        type: "POST",
+                        data: data,
+                        success: function (data) {
+                            $("#OrdersInAdmin").html(data);
+                        }
+                    });
+                });
+                        });
+                    </script>
+                </td>
+            </tr>
+        }
+    </table>
+}
+<br/>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

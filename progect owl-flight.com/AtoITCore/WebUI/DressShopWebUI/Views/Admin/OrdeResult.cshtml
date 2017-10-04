@@ -1,0 +1,69 @@
+﻿@using DressShopWebUI.Controllers
+@model IEnumerable<Domain.Entityes.OrderDetails>
+
+@{
+    ViewBag.Title = "Замовлення";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<label for="dateSelect" style="background-color: bisque">Фільтр по даті</label>
+<select id="dateSelect">
+    <option value="@((int)SortType.None)"></option>
+    <option value="@((int)SortType.Before)">від останніх до перших</option>
+    <option value="@((int)SortType.Later)">від перших до останніх </option>
+</select>
+<label for="statusSelect" style="background-color: bisque">Фільтр по статусу</label>
+<select id="statusSelect">
+    <option value="0">Всі замовлення</option>
+    <option value="1">Обрати нові замовлення</option>
+    <option value="2">Обрати виконані замовлення</option>
+</select>
+
+<br /><br />
+
+    <div id="OrdersInAdmin">
+        @Html.Partial("Orders", Model)
+    </div>
+
+<script>
+    $(document)
+       .ready(function () {
+           $("#dateSelect")
+               .change(function () {
+                   var data = {
+                       sortType: $("#dateSelect option:selected").val(),
+                       sortStatus: $("#statusSelect option:selected").val()
+                   };
+                   $.ajax({
+                       url: "/Admin/OrdeResult",
+                       type: "POST",
+                       data: data,
+                       success: function (data) {
+                           $("#OrdersInAdmin").html(data);
+                       }
+                   });
+               });
+       });
+    $(document)
+        .ready(function () {
+            $("#statusSelect")
+                .change(function () {
+                    var data = {
+                        sortType: $("#dateSelect option:selected").val(),
+                        sortStatus: $("#statusSelect option:selected").val()
+                    };
+                    $.ajax({
+                        url: "/Admin/OrdeResult",
+                        type: "POST",
+                        data: data,
+                        success: function (data) {
+                            $("#OrdersInAdmin").html(data);
+                        }
+                    });
+                });
+        });
+   
+</script>
+
+
+
