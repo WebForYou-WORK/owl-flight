@@ -151,6 +151,7 @@
     <Content Include="PhotoForDB\photo1.jpg" />
     <Content Include="PhotoForDB\three.png" />
     <Content Include="fonts\4089.ttf" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
