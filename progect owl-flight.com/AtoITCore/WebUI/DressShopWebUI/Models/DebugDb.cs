@@ -401,7 +401,7 @@ namespace DressShopWebUI.Models
 
             db.Slider.Add(new Slider
             {
-                SlidePhoto = "photo1.jpg",
+                SlidePhoto = "photo1.png",
                 Name = "Фестиваль \"Україна та Ізраїль разом\"",
                 Number = 2,
                 SlideDescription = "Фестиваль \"Україна і Ізраїль разом\", на фото посол України"

@@ -148,7 +148,7 @@
     <Content Include="PhotoForDB\owlblue.png" />
     <Content Include="PhotoForDB\owlred.png" />
     <Content Include="PhotoForDB\owlwhite.png" />
-    <Content Include="PhotoForDB\photo1.jpg" />
+    <Content Include="PhotoForDB\photo1.png" />
     <Content Include="PhotoForDB\three.png" />
     <Content Include="fonts\4089.ttf" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />

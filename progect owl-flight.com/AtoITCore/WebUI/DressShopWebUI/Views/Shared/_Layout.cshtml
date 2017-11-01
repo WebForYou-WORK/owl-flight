@@ -4,48 +4,149 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/style.css" rel="stylesheet" />
+    
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/main.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-    <style>
-        .nav > li > a:focus, .nav > li > a:hover {
-            background-color: #000000;
-            background-color: rgba(0, 0, 0, 0);
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <!----------------------------------------------BRAND & LOGO-------------------------------------------------->
-        <a class="navbar-brand" href="/Home/Selling"><img src="~/img/logo.png" alt=""></a><p class="logo"> OWL FLIGHT</p>
-        <!---------------------------------------- NAVIGATION PANEL--------------------------------------------------->
-        <nav class="navbar">
-            <div class="container-fluid">
-                <div class="navbar-header">
+    <div class="container-fluid bodyback">
+        <header>
+            <div class="row">
+                <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
+                    <a href="/Home/Selling"><img src="~/img/logo.png"  class ="logoimg" alt="Футболки" title="Футболки owl-flight" ></a>
                 </div>
-                <div class="navbar" id="bs-example-navbar-collapse" id="menu">
-                    <!--      NAV MENU-->
-                    <ul class="nav navbar-nav" style="color:black">
-                        <li class="catalog_menu"><a href="/Home/Selling" style="color:black">Головна</a></li>
-                        <li class="about_us_menu"><a href="/Home/AboutUs" style="color:black">Про нас</a></li>
-                        <li><a href="https://www.facebook.com/Flight-OWL-865530733589259" target="_blank"><img src="~/img/square-facebook-128.png" alt="" class="icon_menu"></a></li>
-                        @*метод генирирующий разметку для корзины. Разметка (Summary) находиться в папке Basket*@
-                        <li class="catalog_menu">@Html.Action("Summary", "Basket")</li>
+                <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8">
+                    <p class="logo"> OWL-FLIGHT</p>
+                    <h1 class="logotxt">Український продукт ветеранів АТО</h1>
+                </div>
+                <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
+                        @Html.Action("Summary", "Basket")
+                </div>
+                <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
+                        <a href="https://www.facebook.com/Flight-OWL-865530733589259" target="_blank"><img src="~/img/square-facebook-128.png" class="iconheader" alt="аккаунт в фейсбуке"></a>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <!---------------------------------------- NAVIGATION PANEL--------------------------------------------------->
+            <div class="container-fluid">
+                <nav class="navbar navbar-default" role="navigation">
+                    <hr class="linehr">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="mainmenu">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/Home/Selling"><span class="spanLi">Футболки "owl-flight"</span></a>
+                            </li>
+                            <li>
+                                <a href="/Home/AboutUs"><span class="spanLi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Про нас&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <hr class="linehr1">
+                </nav>
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------------------------------->
+
+                @RenderBody()
+                
+        @*<section class="smth">
+            <div class="smth_table">
+                <h4>Таблица розмеров</h4>
+                <table class="size_table">
+                    <thead>
+                        <tr>
+                            <th>размер EURO </th>
+                            <th style="text-align: center"> S</th>
+                            <th style="text-align: center"> M</th>
+                            <th style="text-align: center"> L</th>
+                            <th style="text-align: center"> XL</th>
+                            <th style="text-align: center"> XXL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">размер RUS</th>
+                            <td>40-42</td>
+                            <td>44-46</td>
+                            <td>48-50</td>
+                            <td>52-54</td>
+                            <td>56-58</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ширина талии</th>
+                            <td>49</td>
+                            <td>50</td>
+                            <td>55</td>
+                            <td>59</td>
+                            <td>61</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">довжина</th>
+                            <td>70</td>
+                            <td>72</td>
+                            <td>75</td>
+                            <td>76</td>
+                            <td>78</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="delivery">
+                <h4>
+                    Доставка і оплата
+                </h4>
+                <div class="pay">
+                    <h5>Оплата</h5>
+                    <ul>
+                        <li>Готівкою: Уточніть інформацію про оплату цим способом у майстра</li>
+                        <li>Для України: перевід банківську на карту.</li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="deliv">
+                    <h5>Доставка</h5>
+                    <p>Доставка в усі країни:</p>
+                    <ul>
+                        <li>Пошта</li>
+                        <li>
+                            Самовивіз / Особиста зустріч
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!------------------------------------------------------------------------------------------------------------->
-    </header>
-    @RenderBody()
-    <footer>
-        <div class="row webforyou">
-            <strong><p class="m-0 text-center text-white">Copyright &copy; <a href="http://webforyou.com.ua/">WEB FOR YOU</a> 2017</p></strong>
-        </div>
-    </footer>
-    </body>
+
+
+            <div class="contact">
+                <h4>Контакти</h4>
+                <p>
+                    <span><img src="~/img/Maps-Location-icon.png" /></span>Украина, Киев, вул Шевченка 164
+                    
+                </p>
+                <p>
+                    <img src="~/img/office-phone-icon--25.png" />+380 123 330 365
+                </p>
+            </div>
+        </section>*@
+
+        <p class="text-center">
+            Copyright &copy; <a href="http://webforyou.com.ua/">WEB FOR YOU</a> 2017
+        </p>
+    </div>
+</body>
 </html>

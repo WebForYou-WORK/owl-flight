@@ -10,55 +10,80 @@
     font-style: normal;
 }
 
-body {
+.bodyback {
     background-image: url(../img/unnamed5.jpg);
-    background-size:100% 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: center;
 }
 
-header {
-    width: 100%;
-    height: 200px;
+.logoimg {
+    margin: 10px;
+}
+.logo {
+    text-shadow: 0px 0px 0px black, 4px 4px 0.01em slategray;
+    position: relative;
+    margin-top: 10px;
+    font-family: Alterna;
+    font-size: 150px;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: -110px;
 }
 
+.logotxt {
+    position: relative;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: -60px;
+}
+
+.iconheader {
+    float: left;
+    margin-top: 30px;
+}
+ 
+    .linehr {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 1100px;
+    }
+.linehr1 {
+    float: left;
+    border: none;
+    background-color: rgba(130, 130, 130, 0.61);
+    color: rgba(130, 130, 130, 0.61);
+    height: 2px;
+    width: 1100px;
+}
+/*------------------------------------------------------------- Отобранное ---------------------------------------------*/
 main {
     clear: both;
     height: 1500px;
     margin-top: 15px;
 }
-
-.logo {
-    position: relative;
-    top: 10px;
-    font-family: Alterna;
-    font-size: 100px;
-    color: black;
-    text-align: center;
-    right: 12%;
-    font-weight: 500;
-    
+.spanLi {
+    background-color: rgba(193, 184, 184, 0.41);
+    border: 1px solid rgba(130, 130, 130, 0.9);
+    border-radius: 5px;
+    padding: 3px;
 }
-
-.navbar-nav>li>a {
-    font-size: 1.8em;
+.navbar-nav > li > a {
+    font-size: 2.1em;
 }
 
 .navbar-nav>li>a:hover {
-    font-size: 2em;
-    background:none
+    font-size: 2.3em;
 }
-
-
-nav.navbar {
-/*    background-color: lightgray;*/
-    height: 60px;
-    position: relative;
-    top: -30px;
-    left: 60px;
-    opacity: 0.8;
-    margin: auto;
-    z-index: 1
+.navbar-nav > li {
+    margin: 3px;
+   width: 350px;
 }
 
 .social {
@@ -70,54 +95,40 @@ nav.navbar {
 
 .nav.navbar-nav {
     position: relative;
-    left: 30%;
+    left: 29%;
+  
+}
+#mainmenu {
+    position: relative;
+    overflow: hidden;
+}.brand {
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
-.icon_menu {
-    width: 25px;
-    height: 25px;
-}
 
-.navbar-brand>img {
-    width: 200px;
-    height: 200px;
-    margin-top: -15px;
-    margin-left: 50px;
-}
 
-.navbar-brand {
-    z-index: 4000;
-}
 
-.navbar-nav>li {
-    width: 200px;
-}
 
 .slider {
     position: relative;
 }
 
 .itemImg {
-    width: 20%;
-    height: 300px;
 }
 
 .item {
-    width: 75%;
-    margin: auto;
+    margin-left: 10%;
 }
 
 .carousel-caption {
-    width: 40%;
-    top: -200px;
+    width: 50%;
+    top: -1px;
     margin-left: 300px;
     color: black;
 }
 
-.carousel-caption p,
-.carousel-caption h2 {
-    color: black;
-}
+
 
 .header2 {
     height: 300px;
@@ -268,6 +279,7 @@ box-shadow:         0px 0px 24px 0px rgba(50, 50, 50, 0.58);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
     cursor: pointer;
+    border-radius: 10px;
 
 }
 
@@ -348,16 +360,8 @@ box-shadow:         0px 0px 24px 0px rgba(50, 50, 50, 0.58);
 }
 
 footer {
-    width: 100%;
-    margin-top: 10px;
-    position: fixed;
-    bottom: 0;
 }
 
-footer h5 {
-    text-align: center;
-    color: white;
-}
 
 #modal_form,
 #modal_form_basket,
@@ -597,8 +601,529 @@ footer h5 {
     width: 35px;
     height: 35px;
 }
+@media screen and (max-width: 1400px) {
+    .nav.navbar-nav {
+        position: relative;
+        left: 25%;
+    }
 
-@media screen and (max-width: 1154px) {
+    .logoimg {
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 120px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -70px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 70px;
+    }
+
+    .linehr {
+        float:right ;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 1000px;
+    }
+
+    .linehr1 {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav.navbar-nav {
+        position: relative;
+        left: 20%;
+    }
+    .logoimg {
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 120px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -70px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 70px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 900px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 900px;
+    }
+}
+@media screen and (max-width: 1026px) {  /*-----------------IPadPro------------------------*/
+    .nav.navbar-nav {
+        position: relative;
+        left: 20%;
+    }
+    .logoimg {
+        margin: 10px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .logo {
+        margin-left: 10px;
+        position: relative;
+        margin-top: 25px;
+        font-family: Alterna;
+        font-size: 100px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -70px;
+    }
+
+    .logotxt {
+        margin-left: 100px;
+        position: relative;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 70px;
+    }
+
+    .iconheader {
+        float: left;
+        margin-top: 30px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .nav.navbar-nav {
+        position: relative;
+        left: 20%;
+    }
+    .logoimg {
+        margin: 10px;
+        width: 180px;
+        height: 180px;
+    }
+    .logo {
+        margin-left: 20px;
+        position: relative;
+        margin-top: 25px;
+        font-family: Alterna;
+        font-size: 80px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -70px;
+    }
+
+    .logotxt {
+        margin-left: 30px;
+        position: relative;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 70px;
+    }
+    .iconheader {
+        float: left;
+        margin-top: 30px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+}
+@media screen and (max-width: 770px) {     /*-----------------iPad------------------------*/
+    .navbar-nav > li {
+        margin: 0px;
+        width: 350px;
+    }
+
+    .nav.navbar-nav {
+        position: relative;
+        left: 1%;
+    }
+    .logoimg {
+        margin: 10px;
+        width: 150px;
+        height: 150px;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 90px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -60px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .iconheader {
+        width: 50px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+
+    .linehr1 {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 600px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .nav.navbar-nav {
+        position: relative;
+        left: 5%;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 70px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -60px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .iconheader {
+        width: 40px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+    .navbar-nav > li {
+        margin: 3px;
+        width: 350px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .nav.navbar-nav {
+        position: relative;
+        left: 5%;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 50px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -40px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 15px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .iconheader {
+        width: 30px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+    .navbar-nav > li {
+        margin: 3px;
+        width: 350px;
+    }
+}
+@media screen and (max-width: 414px) {  /*-----------------Nexus------------------------*/
+    .nav.navbar-nav {
+        position: relative;
+        left: 5%;
+    }
+     .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 50px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -40px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 15px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .iconheader {
+        width: 30px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 240px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 240px;
+    }
+    .navbar-nav > li {
+        margin: 3px;
+        width: 350px;
+    }
+}
+@media screen and (max-width: 360px) { /*-----------------Galaxy S5------------------------*/
+    .nav.navbar-nav {
+        position: relative;
+        left: 5%;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 50px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -40px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 12px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+
+    .iconheader {
+        width: 30px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+    .navbar-nav > li {
+        margin: 3px;
+        width: 350px;
+    }
+}
+@media screen and (max-width: 322px) {    /*----------------------ifone 5 --------------------*/
+    .nav.navbar-nav {
+        position: relative;
+        left: -13px;
+    }
+    .logo {
+        position: relative;
+        margin-top: 10px;
+        font-family: Alterna;
+        font-size: 40px;
+        color: black;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: -30px;
+    }
+
+    .logotxt {
+        position: relative;
+        font-size: 12px;
+        color: black;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .iconheader {
+        width: 29px;
+        float: left;
+        margin-top: 10px;
+    }
+    .linehr {
+        float: left;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+
+    .linehr1 {
+        float: right;
+        border: none;
+        background-color: rgba(130, 130, 130, 0.61);
+        color: rgba(130, 130, 130, 0.61);
+        height: 2px;
+        width: 210px;
+    }
+    .navbar-nav > li {
+        margin: 3px;
+        width: 350px;
+    }
+}
+/*------------------------------------------------------- Медийки------------------------------------------*/
+
+/*-------------------------------все что ниже - полная хрень!!!----------------------------------*/
+/*@media screen and (max-width: 1154px) {
     .contact {
         float: left;
         margin-left: 40px;
@@ -904,8 +1429,8 @@ footer h5 {
     }
     
      #buyN {
-/*
-        margin-left: -280px;*/
+
+        margin-left: -280px
         position: relative;
         left: -280px;
          margin-bottom: 10px;
@@ -987,4 +1512,4 @@ footer h5 {
         margin-left: 30px;
         margin-top: 30px;
     }
-}
+}*/
