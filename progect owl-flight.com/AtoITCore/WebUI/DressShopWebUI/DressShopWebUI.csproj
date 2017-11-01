@@ -125,6 +125,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="img\body1.jpg" />
+    <Content Include="img\close.png" />
     <Content Include="img\help.jpg" />
     <Content Include="img\knopka.gif" />
     <Content Include="img\logo.png" />

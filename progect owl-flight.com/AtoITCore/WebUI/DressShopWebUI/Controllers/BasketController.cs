@@ -27,7 +27,7 @@ namespace DressShopWebUI.Controllers
             };
             if (userBasket.Basket.CountItem == 0)
             {
-                ViewBag.Sorry = "Ваша корзина пуста";
+                ViewBag.Sorry = "ваш кошик порожній";
             }
             return View(userBasket);
 

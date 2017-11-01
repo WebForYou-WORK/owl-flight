@@ -1,7 +1,7 @@
 ﻿@using Domain.Entityes
 @model IEnumerable<Product>
 @{
-    ViewBag.Title = "Головна";
+    ViewBag.Title = "Футболки owl-flight";
 }
 <style>
     .field-validation-error {
@@ -35,18 +35,17 @@
         {
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div class="catalog" style="padding: 10px">
-                    <figure style="text-align:center;">
-                        <img src="~/PhotoForDB/@i.Photo" style="width: 90%; height: auto">
-                        <figcaption>
-                            <h3>@i.Name</h3>
+                    
+                    <figure style="text-align: center;" class="btn" data-toggle="modal" data-target="#@("myModal"+i.ProductId)">
+                        <img src="~/PhotoForDB/@i.Photo" title="@("футболка - " + i.Name)" alt="@("футболка - " + i.Name)" style="width: 90%; height: auto">
+                        
+                            <h3 class="myh3">@i.Name</h3>
                             <h4>@i.Price грн</h4>
-                        </figcaption>
                     </figure>
-                    <div id="modal_form" >
-                        <span id="modal_close">X</span>
-                        @Html.Partial("PartialSelling", i)
-                    </div>
-                </div>
+                        <div id="@("myModal"+i.ProductId)" class="modal fade" role="dialog" style="text-align: center;">
+                            @Html.Partial("PartialSelling", i)
+                        </div>
+</div>
             </div>
     }
     @Html.Action("BasketOnView", "Basket")

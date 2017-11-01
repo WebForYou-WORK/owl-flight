@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+.myh3 {
+    font-size: 24px;
+}
 @font-face {
     font-family: 'Alterna';
     src: url('../fonts/4089.ttf') format('truetype');
@@ -23,13 +25,13 @@
 .logo {
     text-shadow: 0px 0px 0px black, 4px 4px 0.01em slategray;
     position: relative;
-    margin-top: 10px;
+    margin-top: 25px;
     font-family: Alterna;
     font-size: 150px;
     color: black;
     text-align: center;
     font-weight: 500;
-    margin-bottom: -110px;
+    margin-bottom: -80px;
 }
 
 .logotxt {
@@ -63,7 +65,86 @@
     width: 1100px;
 }
 /*------------------------------------------------------------- Отобранное ---------------------------------------------*/
-main {
+/*___________________________________________________________Кнопка_________________________________________________*/
+.button22 {
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 2.5em;
+    line-height: 2.4em;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    color: #000;
+    outline: none;
+    border: 1px solid rgba(110,121,128,.8);
+    border-top-color: rgba(0,0,0,.3);
+    border-radius: 5px;
+    background: rgb(206, 220, 231) linear-gradient(rgb(206,220,231), rgb(89,106,114));
+    box-shadow: 0 -1px rgba(10,21,28,.9) inset, 0 1px rgba(255,255,255,.5) inset;
+}
+
+    .button22:hover {
+        background: linear-gradient(#d2dfea, #71828c);
+    }
+
+    .button22:active {
+        line-height: 2.6em;
+        background: linear-gradient(#bac6cf, #c5d3de 20%, #71828c);
+        box-shadow: 0 -1px rgba(255,255,255,.4) inset;
+    }
+
+    .button22:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        z-index: -1;
+        border-radius: 8px;
+        background: linear-gradient(rgba(200,200,200,.5), rgba(240,240,240,.5));
+    }
+    .btnfixL {
+        margin-left: -25px;
+
+    }
+.btnfixR {
+    margin-right: -25px;
+}
+/*___________________________________________________________Кнопка_________________________________________________*/
+.inBasket {
+    font-size: 20px;
+}
+.vsego {
+    text-align: right;
+}
+.basket-button {
+    margin-top: 4%
+}
+.basket-opis {
+}
+.basket-img {
+    max-height: 120px;
+    margin: 1px;
+}
+.basket-images {
+    padding: 5px;
+}
+.itogo {
+    color: #292929;
+    font-weight: 600;
+    font-size: 23px;
+}
+.basket {
+    box-shadow: 0 0 5px 0 rgba(50, 50, 50, .58);
+}
+.addbasket {
+    font-size: 30px;
+    margin-left: -39px;
+}main {
     clear: both;
     height: 1500px;
     margin-top: 15px;
@@ -246,29 +327,10 @@ th {
     padding-top: 5px;
 }
 
-.catalog div .i1,
-.catalog div .i2,
-.catalog div .i3,
-.catalog div .i4,
-.catalog div .i5,
-.catalog div .i6,
-.catalog div .i7,
-.catalog div .i8,
-.catalog div .i9,
-.catalog div .i10,
-.catalog div .i11,
-.catalog div .i12,
-.catalog div .i13,
-.catalog div .i14,
-.catalog div .i15,
-.catalog div .i16 {
-    width: 80%;
-    height: 75%;
-}
+
 
 .catalog {
     width: 100%;
-    
 }
 
 .catalog figure:hover {
@@ -363,39 +425,7 @@ footer {
 }
 
 
-#modal_form,
-#modal_form_basket,
-#modal_form .m1,
-#modal_form .m2,
-#modal_form .m3,
-#modal_form .m4,
-#modal_form .m5,
-#modal_form .m6,
-#modal_form .m7,
-#modal_form .m8,
-#modal_form .m9,
-#modal_form .m10,
-#modal_form .m11,
-#modal_form .m12,
-#modal_form .m13,
-#modal_form .m14,
-#modal_form .m15,
-#modal_form .m16{
-    width: 650px;
-    height: 450px;
-    border-radius: 5px;
-    border: 3px gray solid;
-    background: #e6e6e6;
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -350px;
-    display: none;
-    opacity: 0;
-    z-index: 5000;
-    padding: 20px 10px;
-}
+
 
 #modal_form_basket {
     height: 550px;
@@ -410,93 +440,6 @@ footer {
 
 
 
-#modal_form #modal_close,
-#modal_form_basket #modal_close 
-#modal_form .m1 #modal_close,
-#modal_form .m2 #modal_close,
-#modal_form .m3 #modal_close,
-#modal_form .m4 #modal_close,
-#modal_form .m5 #modal_close,
-#modal_form .m6 #modal_close,
-#modal_form .m7 #modal_close,
-#modal_form .m8 #modal_close,
-#modal_form .m9 #modal_close,
-#modal_form .m10 #modal_close,
-#modal_form .m11 #modal_close,
-#modal_form .m12 #modal_close,
-#modal_form .m13 #modal_close,
-#modal_form .m14 #modal_close,
-#modal_form .m15 #modal_close,
-#modal_form .m16 #modal_close {
-    width: 21px;
-    height: 21px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    display: block;
-}
-
-#modal_form_basket .table th {
-    text-align: center;
-}
-
-#modal_form_basket h2 {
-    text-align: center;
-}
-
-#modal_form_basket img {
-    width: 30px;
-    height: 30px;
-}
-
-.input-group .form-control:first-child,
-.input-group-addon:first-child,
-.input-group-btn:first-child>.btn,
-.input-group-btn:first-child>.btn-group>.btn,
-.input-group-btn:first-child>.dropdown-toggle,
-.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,
-.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle),
-.input-group .form-control:last-child,
-.input-group-addon:last-child,
-.input-group-btn:first-child>.btn-group:not(:first-child)>.btn,
-.input-group-btn:first-child>.btn:not(:first-child),
-.input-group-btn:last-child>.btn,
-.input-group-btn:last-child>.btn-group>.btn,
-.input-group-btn:last-child>.dropdown-toggle,
-.input-group .form-control:not(:first-child):not(:last-child),
-.input-group-addon:not(:first-child):not(:last-child),
-.input-group-btn:not(:first-child):not(:last-child) {
-    width: 270px;
-    float: left;
-    margin-left: 20px;
-    margin-top: 5px;
-}
-
-.input-group .form-control:last-child,
-.input-group-addon:last-child,
-.input-group-btn:first-child>.btn-group:not(:first-child)>.btn,
-.input-group-btn:first-child>.btn:not(:first-child),
-.input-group-btn:last-child>.btn,
-.input-group-btn:last-child>.btn-group>.btn,
-.input-group-btn:last-child>.dropdown-toggle {
-    float: right;
-    margin-right: -100px;
-    margin-top: -72px;
-    height: 72px;
-}
-
-.basket_buttons {
-    width: 300px;
-    float: right;
-    margin-top: 50px
-}
-
-.basket_buttons button .btb-info {
-    float: left;
-    width: 100px;
-    height: 60px;
-}
 
 #overlay {
     z-index: 3;
@@ -511,28 +454,6 @@ footer {
     left: 0;
     cursor: pointer;
     display: none;
-}
-
-#modal_form img,
-#modal_form .m1 img,
-#modal_form .m2 img,
-#modal_form .m3 img,
-#modal_form .m4 img,
-#modal_form .m5 img,
-#modal_form .m6 img,
-#modal_form .m7 img,
-#modal_form .m8 img,
-#modal_form .m9 img,
-#modal_form .m10 img,
-#modal_form .m11 img,
-#modal_form .m12 img,
-#modal_form .m13 img,
-#modal_form .m14 img,
-#modal_form .m15 img,
-#modal_form .m16 img {
-    width: 250px;
-    height: 70%;
-    margin-top: 30px;
 }
 
 .modal_about {
@@ -650,6 +571,9 @@ footer {
         height: 2px;
         width: 1000px;
     }
+    .myh3 {
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -697,6 +621,9 @@ footer {
         color: rgba(130, 130, 130, 0.61);
         height: 2px;
         width: 900px;
+    }
+    .myh3 {
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 1026px) {  /*-----------------IPadPro------------------------*/
@@ -753,6 +680,9 @@ footer {
         height: 2px;
         width: 600px;
     }
+    .myh3 {
+        font-size: 20px;
+    }
 }
 @media screen and (max-width: 992px) {
     .nav.navbar-nav {
@@ -806,6 +736,13 @@ footer {
         height: 2px;
         width: 600px;
     }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
 }
 @media screen and (max-width: 770px) {     /*-----------------iPad------------------------*/
     .navbar-nav > li {
@@ -819,8 +756,8 @@ footer {
     }
     .logoimg {
         margin: 10px;
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
     }
     .logo {
         position: relative;
@@ -862,6 +799,13 @@ footer {
         color: rgba(130, 130, 130, 0.61);
         height: 2px;
         width: 600px;
+    }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 27px;
+        margin-left: -29px;
     }
 }
 @media screen and (max-width: 650px) {
@@ -914,6 +858,13 @@ footer {
         margin: 3px;
         width: 350px;
     }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
 }
 @media screen and (max-width: 480px) {
     .nav.navbar-nav {
@@ -965,6 +916,16 @@ footer {
         margin: 3px;
         width: 350px;
     }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
+    .inBasket {
+        font-size: 15px;
+    }
 }
 @media screen and (max-width: 414px) {  /*-----------------Nexus------------------------*/
     .nav.navbar-nav {
@@ -1015,6 +976,16 @@ footer {
     .navbar-nav > li {
         margin: 3px;
         width: 350px;
+    }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
+    .inBasket {
+        font-size: 15px;
     }
 }
 @media screen and (max-width: 360px) { /*-----------------Galaxy S5------------------------*/
@@ -1068,12 +1039,23 @@ footer {
         margin: 3px;
         width: 350px;
     }
+    .myh3 {
+        font-size: 17px;
+    }
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
+    .inBasket {
+        font-size: 15px;
+    }
 }
-@media screen and (max-width: 322px) {    /*----------------------ifone 5 --------------------*/
+@media screen and (max-width: 322px) { /*----------------------ifone 5 --------------------*/
     .nav.navbar-nav {
         position: relative;
         left: -13px;
     }
+
     .logo {
         position: relative;
         margin-top: 10px;
@@ -1093,11 +1075,13 @@ footer {
         font-weight: 100;
         margin-bottom: 10px;
     }
+
     .iconheader {
         width: 29px;
         float: left;
         margin-top: 10px;
     }
+
     .linehr {
         float: left;
         border: none;
@@ -1115,401 +1099,22 @@ footer {
         height: 2px;
         width: 210px;
     }
+
     .navbar-nav > li {
         margin: 3px;
         width: 350px;
     }
+
+    .myh3 {
+        font-size: 17px;
+    }
+
+    .addbasket {
+        font-size: 25px;
+        margin-left: -19px;
+    }
+    .inBasket {
+        font-size: 10px;
+    }
 }
 /*------------------------------------------------------- Медийки------------------------------------------*/
-
-/*-------------------------------все что ниже - полная хрень!!!----------------------------------*/
-/*@media screen and (max-width: 1154px) {
-    .contact {
-        float: left;
-        margin-left: 40px;
-        margin-top: -100px;
-    }
-}
-
-@media screen and (max-width: 1145px) {
-    .logo {
-        margin-left: 50px;
-    }
-}
-
-@media screen and (max-width: 1048px) {
-    .logo {
-        font-size: 70px;
-        margin-left: 40px;
-    }
-    .about_us_contact {
-        width: 50%;
-    }
-    nav.navbar {
-        margin-top: 40px;
-    }
-    
-    .social {
-        top: 0px
-    }
-}
-
-@media screen and (max-width: 1018px) {
-    .catalog_product {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1017px) {
-    .smth {
-        height: 400px;
-    }
-    footer {
-        position: relative;
-        top: 10px;
-    }
-}
-
-@media screen and (max-width: 988px) {
-    .logo {
-        font-size: 60px;
-        margin-left: 20px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .product div {
-        width: 32%;
-        margin-left: 5px;
-    }
-    .catalog .catalog_product figure {
-        width: 30%;
-        height: 290px;
-    }
-    .item img {
-        width: 50%;
-    }
-    .about_us_contact {
-        width: 67%;
-    }
-}
-
-@media screen and (max-width: 988px) {
-    .logo {
-        font-size: 60px;
-        margin-left: 20px;
-    }
-}
-
-
-@media screen and (max-width: 900px) {
-    .contact {
-        margin-left: -60px;
-        top: 20px
-    }
-}
-
-@media screen and (max-width: 887px) {
-    #bs-example-navbar-collapse ul li {
-        width: 130px;
-        left: 5%
-    }
-    
-    #bs-example-navbar-collapse  {
-        left: 5%
- 
-    }
-    
-    .logo {
-       position: relative;
-        left: -20px;
-    }
-    
-    .navbar-brand {
-        position: relative;
-        left: -20px;
-    }
-}
-
-@media screen and (max-width: 801px) {
-    .logo {
-        font-size: 70px;
-        margin-left: 170px;
-    }
-    .about_us p {
-        width: 100%;
-    }
-    .smth {
-        height: 500px;
-    }
-    .delivery {
-        margin-left: 60px;
-        padding-bottom: 20px;
-    }
-    .smth_table {
-        position: relative;
-        left: 60px;
-    }
-    .deliv {
-        clear: both;
-        margin-left: 100px;
-    }
-    .contact {
-        margin-left: 10px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    #bs-example-navbar-collapse li {
-        float: left;
-        left: -100px;
-        top: -30px;
-    }
-    
-    #bs-example-navbar-collapse {
-        left: 30px;
-    }
-    
-    .logo {
-       position: relative;
-        left: -50px;
-    }
-    
-    .navbar-brand {
-        position: relative;
-        left: -40px;
-    }
-    
-    
-}
-
-@media screen and (max-width: 729px) {
-    .delivery {
-        display: block
-    }
-    .smth {
-        height: 700px;
-    }
-    .pay {
-        width: 350px;
-    }
-    .delivery {
-        margin-left: 0;
-    }
-    .smth_table {
-        left: 0px;
-    }
-    .deliv {
-        margin-left: 0px;
-    }
-    
-    #modal_form_basket {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width: 666px) {
-    .navbar-brand {
-        margin-left: -10px;
-    }
-    #bs-example-navbar-collapse li {
-        width: 150px;
-        left: -150px;
-    }
-    .logo {
-        font-size: 60px;
-        left: -10px;
-    }
-    
-    #bs-example-navbar-collapse {
-        top: -20px;
-    }
-    
-    .social {
-        top: 40px;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .product div {
-        width: 48%;
-    }
-    .about_us_contact {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 619px) {
-    .contact {
-        margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 613px) {
-    .logo {
-        margin-left: 120px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .catalog .catalog_product figure {
-        margin-left: 30px;
-        width: 43%;
-    }
-}
-
-@media screen and (max-width: 594px) {
-    .navbar-brand {
-        margin-left: -50px;
-    }
-    .up {
-        left: 80%
-    }
-    .navbar-collapse {
-        display: none;
-    }
-    .logo {
-        font-size: 70px;
-        position: absolute;
-        margin: auto;
-        left: 60px;
-        top: 0;
-    }
-    main {
-        margin-top: -50px;
-    }
-    .navbar-brand {
-        display: none;
-    }
-    #bs-example-navbar-collapse {
-        left: -110px;
-    }
-    #bs-example-navbar-collapse {
-        position: relative;
-    }
-    
-    #bs-example-navbar-collapse li {
-        width: 100px;
-        top: 50px;
-    }
-    #bs-example-navbar-collapse li a {
-        font-size: 20px;
-    }
-    .logo {
-        left: 10px;
-    }
-    
-    .slider {
-        display: none;
-    }
-    
-    
-   #modal_form,
-#modal_form_basket {
-    width: 350px;
-    top: -20%;
-    position: fixed;
-   margin-left:-200px;
-    display: block;
-    overflow-y: scroll;
-    margin-top: -200px;
-    padding-bottom: 40px;
-    
-    
-}
-    .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
-        float: left;
-        position: relative;
-        top: 80px;
-    }
-
-    .radio1,
-    .radio2 {
-        margin-top: 60px;
-    }
-    
-     #buyN {
-
-        margin-left: -280px
-        position: relative;
-        left: -280px;
-         margin-bottom: 10px;
-}
-    
-    .modal_about {
-        padding-left: 40px;
-    }
-}
- 
-
-
-@media screen and (max-width: 572px) {
-    .about_us {
-        height: 600px;
-    }
-}
-
-@media screen and (max-width: 474px) {
-    .about_us_contact span {
-        display: block;
-    }
-    .about_us {
-        height: 680px;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .catalog .catalog_product figure {
-        margin-left: 80px;
-        width: 70%;
-        height: 310px;
-    }
-}
-
-@media screen and (max-width: 427px) {
-    .logo {
-        font-size: 60px;
-        left: 40px;
-    }
-    #modal_form,
-    #modal_form_basket {
-        top: -50%;
-        width:100%;
-        margin-left: -170px;
-        padding-bottom: 70px;
-    }
-   
-}
-
-@media screen and (max-width: 397px) {
-    .logo {
-        font-size: 50px;
-        left: 40px;
-    }
-   
-    .about_us {
-        height: 800px;
-    }
-}
-
-@media screen and (max-width: 345px) {
-    .logo {
-        font-size: 50px;
-        left: 30px;
-    }
-    .up {
-        top: 500px;
-        float: left;
-    }
-    
-}
-
-@media screen and (max-width: 400px) {
-    .product div {
-        width: 80%;
-        height: 250px;
-        margin: auto;
-        margin-left: 30px;
-        margin-top: 30px;
-    }
-}*/
