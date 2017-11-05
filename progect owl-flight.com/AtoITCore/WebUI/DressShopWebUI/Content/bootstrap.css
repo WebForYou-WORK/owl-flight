@@ -2901,12 +2901,12 @@ th {
         padding: 8px;
         line-height: 1.42857143;
         vertical-align: top;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid #000;
     }
 
     .table > thead > tr > th {
         vertical-align: bottom;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 2px solid #000;
     }
 
     .table > caption + thead > tr:first-child > th,
@@ -2919,7 +2919,7 @@ th {
     }
 
     .table > tbody + tbody {
-        border-top: 2px solid #ddd;
+        border-top: 2px solid #000;
     }
 
     .table .table {
@@ -2936,7 +2936,7 @@ th {
 }
 
 .table-bordered {
-    border: 1px solid #ddd;
+    border: 1px solid #000;
 }
 
     .table-bordered > thead > tr > th,
