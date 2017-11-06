@@ -20,9 +20,9 @@ namespace Domain.Concrete
             try
             {
                 //c какой почты отправляем письмо 
-                MailMessage mail = new MailMessage { From = new MailAddress("owl-flight.com@test.com") };
-                mail.To.Add(new MailAddress("owl-flight.com@test.com")); // E-mail Администратора
-                mail.Subject = "Новий заказ";
+                MailMessage mail = new MailMessage { From = new MailAddress("owlflightprogect@gmail.com") };
+                mail.To.Add(new MailAddress("webforyou.ua@gmail.com")); // E-mail Администратора
+                mail.Subject = "Нове замовлення";
                 mail.Body = EmailMessageToAdministrator(basket, details);
                 if (!string.IsNullOrEmpty(attachFile))
                     mail.Attachments.Add(new Attachment(attachFile));
@@ -32,7 +32,7 @@ namespace Domain.Concrete
                     Port = 587,
                     EnableSsl = true,
                     //c какой почты отправляем письмо + пароль от этой почты
-                    Credentials = new NetworkCredential("owl-flight.com@test.com".Split('@')[0], "123456789"),
+                    Credentials = new NetworkCredential("owlflightprogect@gmail.com".Split('@')[0], "owlflightprogect123"),
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 };
                 client.Send(mail);
@@ -51,7 +51,7 @@ namespace Domain.Concrete
             try
             {
                 //c какой почты отправляем письмо
-                MailMessage mail = new MailMessage { From = new MailAddress("owl-flight.com@test.com") };
+                MailMessage mail = new MailMessage { From = new MailAddress("owlflightprogect@gmail.com") };
                 mail.To.Add(new MailAddress(details.Email)); //получаем E-mail который ввел пользователь
                 mail.Subject = "owl-flight.com"; // тема письма
                 mail.Body = EmailMessage(basket, details);
@@ -63,7 +63,7 @@ namespace Domain.Concrete
                     Port = 587,//Порт
                     EnableSsl = true,
                     //c какой почты отправляем письмо + пароль от этой почты
-                    Credentials = new NetworkCredential("owl-flight.com@test.com".Split('@')[0], "123456789"),
+                    Credentials = new NetworkCredential("owlflightprogect@gmail.com".Split('@')[0], "owlflightprogect123"),
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 };
                 client.Send(mail);
@@ -98,7 +98,7 @@ namespace Domain.Concrete
             str.AppendLine("Дякуемо за покупку на сайті - owl-flight.com !");
             str.AppendLine("");
             str.AppendLine("");
-            str.AppendLine("Детали заказу:");
+            str.AppendLine("Детали Вашого заказу:");
             str.AppendLine("");
             foreach (var i in basket.Lines)
             {

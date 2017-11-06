@@ -69,6 +69,7 @@ namespace Domain.Entityes
         /// </summary>
         public void Clear()
         {
+            AnswerList.Clear();
             _myCollection.Clear();
         }
     }
