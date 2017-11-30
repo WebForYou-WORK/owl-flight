@@ -15,24 +15,25 @@ namespace Domain.Concrete
         /// <summary>
         /// Отправка письма администратору
         /// </summary>
-        public  void SendMailToAdministrator(Basket basket, Order details, string attachFile = null)
+        public void SendMailToAdministrator(Basket basket, Order details, string mailFrom, string mailPasword, string hostName, int port, bool enableSsl, string mailAdmin, string attachFile = null)
         {
             try
             {
                 //c какой почты отправляем письмо 
-                MailMessage mail = new MailMessage { From = new MailAddress("owlflightprogect@gmail.com") };
-                mail.To.Add(new MailAddress("webforyou.ua@gmail.com")); // E-mail Администратора
+                MailMessage mail = new MailMessage { From = new MailAddress(mailFrom) };
+                mail.To.Add(new MailAddress(mailAdmin)); // E-mail Администратора
+                //("owlflight17@gmail.com")); 
                 mail.Subject = "Нове замовлення";
                 mail.Body = EmailMessageToAdministrator(basket, details);
                 if (!string.IsNullOrEmpty(attachFile))
                     mail.Attachments.Add(new Attachment(attachFile));
                 SmtpClient client = new SmtpClient
                 {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
+                    Host = hostName,
+                    Port = port,
+                    EnableSsl = enableSsl,
                     //c какой почты отправляем письмо + пароль от этой почты
-                    Credentials = new NetworkCredential("owlflightprogect@gmail.com".Split('@')[0], "owlflightprogect123"),
+                    Credentials = new NetworkCredential(mailFrom, mailPasword),
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 };
                 client.Send(mail);
@@ -46,12 +47,12 @@ namespace Domain.Concrete
         /// <summary>
         /// ОТПРАВКА ПИСЬМА ПОЛЬЗОВАТЕЛЮ
         /// </summary>
-        public void SendMail(Basket basket, Order details, string attachFile = null)
+        public void SendMail(Basket basket, Order details, string mailFrom, string mailPasword, string hostName, int port, bool enableSsl, string attachFile = null)
         {
             try
             {
                 //c какой почты отправляем письмо
-                MailMessage mail = new MailMessage { From = new MailAddress("owlflightprogect@gmail.com") };
+                MailMessage mail = new MailMessage { From = new MailAddress(mailFrom) };
                 mail.To.Add(new MailAddress(details.Email)); //получаем E-mail который ввел пользователь
                 mail.Subject = "owl-flight.com"; // тема письма
                 mail.Body = EmailMessage(basket, details);
@@ -59,11 +60,11 @@ namespace Domain.Concrete
                     mail.Attachments.Add(new Attachment(attachFile));
                 SmtpClient client = new SmtpClient
                 {
-                    Host = "smtp.gmail.com", //Хост
-                    Port = 587,//Порт
-                    EnableSsl = true,
+                    Host = hostName,
+                    Port = port,
+                    EnableSsl = enableSsl,
                     //c какой почты отправляем письмо + пароль от этой почты
-                    Credentials = new NetworkCredential("owlflightprogect@gmail.com".Split('@')[0], "owlflightprogect123"),
+                    Credentials = new NetworkCredential(mailFrom, mailPasword),
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 };
                 client.Send(mail);
@@ -73,16 +74,15 @@ namespace Domain.Concrete
                 basket.AnswerList.Add($"На Ваш E-mail ({details.Email}) вислані всі деталі замовлення.");
                 basket.AnswerList.Add("Замовлення відправлений в обробку, скоро ми з вами зв'яжемося, гарного вам дня!");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                basket.AnswerList.Clear();
+                //basket.AnswerList.Clear();
+                //basket.AnswerList.Add($"{e} - {e.Message} - ресурс :{e.Source} - таргет Сайт:{e.TargetSite}");
                 basket.AnswerList.Add($"Щось пішло не так, ми не змогли відправити лист на Ваш E-mail ({details.Email}) ");
                 basket.AnswerList.Add("");
                 basket.AnswerList.Add("Просимо вибачення, за технічні проблеми.");
                 basket.AnswerList.Add("");
                 basket.AnswerList.Add("Ваше замовлення передано адміністратору, скоро ми з вами зв'яжемося, гарного вам дня!");
-                basket.AnswerList.Add("");
-               
             }
         }
 

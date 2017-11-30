@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using Domain.Abstrac;
 using Domain.Entityes;
@@ -11,6 +12,13 @@ namespace DressShopWebUI.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IEmailSending _emailSending;
         private readonly IOrderRepository _orderRepository;
+        //считываем данные с конфигурации
+        private readonly string _mailFrom = WebConfigurationManager.AppSettings["MailFrom"];
+        private readonly string _mailPasword = WebConfigurationManager.AppSettings["PasswordMailFrom"];
+        private readonly string _hostName = WebConfigurationManager.AppSettings["HostName"];
+        private readonly int _port = int.Parse(WebConfigurationManager.AppSettings["Port"]);
+        private readonly string _mailAdmin = WebConfigurationManager.AppSettings["MailAdmin"];
+        private readonly bool _enableSsl = bool.Parse(WebConfigurationManager.AppSettings["EnableSsl"]);
         public BasketController(IProductRepository productRepo, IEmailSending emailSend, IOrderRepository orderRepo)
         {
             _productRepository = productRepo;
@@ -39,8 +47,8 @@ namespace DressShopWebUI.Controllers
         {
             if (ModelState.IsValid && basket.CountItem != 0)
             {
-                _emailSending.SendMailToAdministrator(basket, basketViewModel.Orders, null);
-                _emailSending.SendMail(basket, basketViewModel.Orders, null);
+                _emailSending.SendMailToAdministrator(basket, basketViewModel.Orders, _mailFrom, _mailPasword, _hostName, _port, _enableSsl, _mailAdmin, null);
+                _emailSending.SendMail(basket, basketViewModel.Orders, _mailFrom, _mailPasword, _hostName, _port, _enableSsl, null);
 
                 OrderDetails newOrder = new OrderDetails
                 {
